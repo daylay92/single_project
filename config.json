@@ -58,7 +58,7 @@
         // Use views/unauthorized.hbs for error page.
         "errorTemplate": true,
         // Public URL to production app.
-        "localBaseUrl": "https://my-subdomain.herokuapp.com",
+        "localBaseUrl": "http://104.155.169.157:3000",
         "store": {
             // Don't use memory storage for production, otherwise
             // data in the storage will go away when the app server restarts.
