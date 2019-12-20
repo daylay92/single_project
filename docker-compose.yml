@@ -1,0 +1,19 @@
+version: '3'
+services: 
+    app:
+        env_file:
+            - .env
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        volumes: 
+            - .:/app
+        command: ['bash','-c','while !</dev/tcp/db/5432; do sleep 1; done; npm start']
+        depends_on:
+            - db
+    db:
+        env_file: 
+            - .env
+        image: postgres
